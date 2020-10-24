@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "2093554231",
+    "firebase_url": "https://finalopinionbox.firebaseio.com",
+    "project_id": "finalopinionbox",
+    "storage_bucket": "finalopinionbox.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2093554231:android:24b2e79a92ef0e5c36fdb2",
+        "android_client_info": {
+          "package_name": "com.example.finalopinionbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2093554231-ofq3bacdcfmpuep4n7h5vg547rolgstt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalopinionbox",
+            "certificate_hash": "58924a162a7b143124f62dc46f7eddf2cad31f88"
+          }
+        },
+        {
+          "client_id": "2093554231-hovaotscu7nbal1ung75nrerucv8nnjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_-ZKbuslONRJ53G5mzO-VgZkKZ7u_FIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2093554231-hovaotscu7nbal1ung75nrerucv8nnjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

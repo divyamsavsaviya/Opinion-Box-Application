@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">FinalOpinionBox</string>
+    <string name="navi_post">Post</string>
+    <string name="navi_add">Add</string>
+    <string name="navi_event">Event</string>
+    <string name="navi_account">Account</string>
+    <string name="title_activity_bottom_nevigation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="event_name">Event Name</string>
+    <string name="topic">Topic</string>
+    <string name="date">Date</string>
+    <string name="venue">Venue</string>
+    <string name="event_by">Event By</string>
+    <string name="post">Post</string>
+
+    <string-array name="Privacy">
+        <item>Public</item>
+        <item>Anonymous</item>
+    </string-array>
+
+    <string-array name="branch_array">
+        <item>CSE</item>
+        <item>IT</item>
+    </string-array>
+
+
+</resources>
