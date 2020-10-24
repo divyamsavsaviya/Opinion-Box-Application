@@ -26,9 +26,10 @@ public class Main_Menue_Activity extends AppCompatActivity {
         startActivity(new Intent(Main_Menue_Activity.this , AddPostMainActivity.class));
         Log.d(TAG, "goToPost: GOING TO AddPostMainActivity" );
     }
+
 // change here later on
     public void goToEvent(View view) {
-        startActivity(new Intent(Main_Menue_Activity.this , AddEventOptionActivity.class));
+        startActivity(new Intent(Main_Menue_Activity.this , EventMainActivity.class));
         Log.d(TAG, "goToPost: GOING TO EventMainActivity" );
     }
 
@@ -36,5 +37,4 @@ public class Main_Menue_Activity extends AppCompatActivity {
         startActivity(new Intent(Main_Menue_Activity.this , AccountMainActivity.class));
         Log.d(TAG, "goToPost: GOING TO EventMainActivity" );
     }
-
 }
