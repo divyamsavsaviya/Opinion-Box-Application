@@ -4,14 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
+    android:background="#1d2541"
     tools:context=".AddEventOptionActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="368dp"
-        android:layout_height="344dp"
-        android:layout_marginTop="216dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/privacy_drawable"
+        android:padding="4dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +30,12 @@
                 android:id="@+id/texteventname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Event Name" />
+                android:hint="Event Name"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:theme="@style/MyEditTextTheme"
+                android:singleLine="true"/>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -38,7 +48,11 @@
                     android:id="@+id/texttopic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Topic" />
+                    android:hint="Topic"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:theme="@style/MyEditTextTheme"
+                    android:singleLine="true"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -53,7 +67,11 @@
                         android:id="@+id/textdate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Date" />
+                        android:hint="Date"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:theme="@style/MyEditTextTheme"
+                        android:singleLine="true"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -66,7 +84,11 @@
                             android:id="@+id/textvenue"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Venue" />
+                            android:hint="Venue"
+                            android:textColor="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:theme="@style/MyEditTextTheme"
+                            android:singleLine="true"/>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -79,7 +101,11 @@
                                 android:id="@+id/texteventby"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Event By" />
+                                android:hint="Event By"
+                                android:textColor="#FFFFFF"
+                                android:textColorHint="#FFFFFF"
+                                android:theme="@style/MyEditTextTheme"
+                                android:singleLine="true"/>
                         </com.google.android.material.textfield.TextInputLayout>
                     </com.google.android.material.textfield.TextInputLayout>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -93,9 +119,24 @@
         android:layout_height="wrap_content"
         android:onClick="postevent"
         android:text="Post"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="258dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.007" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

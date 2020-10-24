@@ -11,25 +11,33 @@
         android:layout_width="363dp"
         android:layout_height="146dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginTop="45dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/privacy_drawable"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="An interesting title for you poll?"
+        android:hint="Write Your Petition Here.. "
         android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
         android:textSize="23sp"
+        android:theme="@style/MyEditTextTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.029999971" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="363dp"
-        android:layout_height="245dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/privacy_drawable"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +50,11 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="yes"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:theme="@style/MyEditTextTheme"
+            android:singleLine="true"/>
 
         <EditText
             android:id="@+id/option2"
@@ -52,6 +64,10 @@
             android:ems="10"
             android:hint="No"
             android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:theme="@style/MyEditTextTheme"
+            android:singleLine="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,6 +79,10 @@
             android:ems="10"
             android:hint="option 3"
             android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:theme="@style/MyEditTextTheme"
+            android:singleLine="true"
             android:visibility="invisible" />
 
         <EditText
@@ -73,6 +93,10 @@
             android:ems="10"
             android:hint="option 4"
             android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:theme="@style/MyEditTextTheme"
+            android:singleLine="true"
             android:visibility="invisible" />
     </LinearLayout>
 
@@ -81,56 +105,79 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="45dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_button"
         android:onClick="addnewoption"
         android:text="Add Option"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.06999999" />
 
     <Button
         android:id="@+id/btnnext"
         android:layout_width="138dp"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="132dp"
-        android:layout_marginRight="132dp"
+        android:background="@drawable/rounded_button"
         android:onClick="goToTargetFilter"
         android:text="Next"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnaddrow"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891" />
 
-    <Spinner
-        android:id="@+id/spinner3"
+    <LinearLayout
+
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/posttxt"
+        android:layout_height="35dp"
+        android:background="@drawable/privacy_drawable"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.32999998">
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:text=" Privacy        -"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/posttxt"
-        app:layout_constraintEnd_toStartOf="@+id/spinner3"
-        app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=" Privacy"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/posttxt"
+            app:layout_constraintEnd_toStartOf="@+id/spinner3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.626" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/posttxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.528"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.44" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
