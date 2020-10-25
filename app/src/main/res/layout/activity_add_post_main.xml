@@ -9,35 +9,36 @@
     android:background="#1d2541">
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="310dp"
         android:layout_height="140dp"
+        android:background="#1d2541"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#1d2541">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:background="@drawable/rounded_button"
             android:onClick="addPoll"
             android:text="add poll"
             android:textColor="#FFFFFF"
-            tools:ignore="HardcodedText"
-            android:background="@drawable/rounded_button"/>
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
             android:onClick="addEvent"
             android:text="add event"
             android:textColor="#FFFFFF"
-            tools:ignore="HardcodedText"
-            android:background="@drawable/rounded_button"/>
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

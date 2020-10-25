@@ -5,17 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:textAlignment="center"
+    android:background="#1d2541"
     tools:context=".GetInfoActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/privacy_drawable"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.69">
 
         <EditText
             android:id="@+id/TextDisplayName"
@@ -24,7 +28,9 @@
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="Name According to college Id Card"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/TextCollegeId"
@@ -33,7 +39,9 @@
             android:layout_margin="16dp"
             android:ems="10"
             android:hint="ID Number"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/TextPhone"
@@ -41,8 +49,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
-            android:hint="Enter your Phone Number "
-            android:inputType="phone" />
+            android:hint="Enter your Contact Number "
+            android:inputType="phone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,9 +66,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
+                android:gravity="center"
                 android:inputType="textPersonName"
                 android:text="Branch"
                 android:textAlignment="center"
+
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <Spinner
@@ -69,14 +82,32 @@
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/Finish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:onClick="finish"
-            android:text="Finish" />
-
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="688dp"
+        android:layout_height="245dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+        app:srcCompat="@drawable/humaaans" />
+
+    <Button
+        android:id="@+id/Finish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:background="@drawable/rounded_button"
+        android:onClick="finish"
+        android:text="Proceed"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

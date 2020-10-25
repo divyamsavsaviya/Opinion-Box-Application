@@ -4,32 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1d2541"
     tools:context=".AccountMainActivity">
 
+
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout6"
+        android:layout_width="410dp"
+
+        android:layout_height="328dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122">
 
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="169dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_account_24" />
 
         <TextView
             android:id="@+id/displayNameTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:layout_weight="0.10"
+            android:background="@drawable/privacy_drawable"
+            android:gravity="center"
             android:hint="Display Name"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/displayEmailTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:hint="Display Email"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="24sp" />
 
         <TextView
@@ -37,15 +47,85 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="@drawable/privacy_drawable"
+            android:gravity="center"
             android:hint="Branch"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/logoutBTN"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="logout" />
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/displayEmailTv"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Display Email"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
+
+    <TextView
+        android:id="@+id/displayContactTv"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Display Contact No"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.773" />
+
+    <Button
+        android:id="@+id/logoutBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/rounded_button"
+        android:text="logout"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689"
+        app:srcCompat="@drawable/email"
+        tools:srcCompat="@drawable/email" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="46dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761"
+        app:srcCompat="@drawable/telephone"
+        tools:srcCompat="@drawable/telephone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
