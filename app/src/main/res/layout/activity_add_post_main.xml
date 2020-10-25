@@ -9,6 +9,7 @@
     android:background="#1d2541">
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:orientation="vertical"
@@ -22,11 +23,11 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:background="@drawable/rounded_button"
             android:onClick="addPoll"
             android:text="add poll"
             android:textColor="#FFFFFF"
-            tools:ignore="HardcodedText"
-            android:background="@drawable/rounded_button"/>
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/button2"
