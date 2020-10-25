@@ -8,13 +8,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.client.Firebase;
 
 public class GetInfoActivity extends AppCompatActivity {
+
     private static final String TAG = "GetInfoActivity";
 
     private EditText nameET;

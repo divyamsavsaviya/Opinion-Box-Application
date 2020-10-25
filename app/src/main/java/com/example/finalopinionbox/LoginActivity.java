@@ -52,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setAvailableProviders(provider)
+                .setTheme(R.style.GreenTheme)
                 .setLogo(R.mipmap.ic_launcher)
                 .setTosAndPrivacyPolicyUrls("https://example.com/terms.html",
                         "https://example.com/privacy.html")
