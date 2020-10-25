@@ -60,7 +60,7 @@ public class AccountMainActivity extends AppCompatActivity {
 
         displaynamefield.setText(user.getDisplayName());
         displayemailfield.setText(user.getEmail());
-        displaybranchfield.setText(getInfoActivity.selectedBranch);
+        displaybranchfield.setText(getInfoActivity.UserBranch);
 
 
 

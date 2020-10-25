@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:ems="10"
-            android:hint="ID Number"
+            android:hint = "Enter College ID"
             android:inputType="textPersonName" />
 
         <EditText
