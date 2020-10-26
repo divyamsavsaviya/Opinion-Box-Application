@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.firebase.client.Firebase;
 
 public class GetInfoActivity extends AppCompatActivity {
-
     private static final String TAG = "GetInfoActivity";
 
     private EditText nameET;
@@ -30,6 +29,7 @@ public class GetInfoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_info);
         Firebase.setAndroidContext(this);
@@ -40,11 +40,33 @@ public class GetInfoActivity extends AppCompatActivity {
         BranchSelectorsSpinner = findViewById(R.id.BranchSelection);
 
 
-        UserName = nameET.getText().toString().trim();
-        UserCollegeId = collegeIdET.getText().toString().trim();
-        UserPhone = phoneET.getText().toString().trim();
-        UserBranch = BranchSelectorsSpinner.getSelectedItem().toString().trim();
-        UserBranchID = BranchSelectorsSpinner.getSelectedItemId();
+        UserName = nameET
+                .getText()
+                .toString()
+                .trim();
+        Log.d(TAG, "onCreate: " + UserName);
+
+        UserCollegeId = collegeIdET
+                .getText()
+                .toString()
+                .trim();
+
+        UserPhone = phoneET
+                .getText()
+                .toString()
+                .trim();
+        Log.d(TAG, "onCreate: " + UserPhone);
+
+        UserBranch = BranchSelectorsSpinner
+                .getSelectedItem()  // getting selected Item
+                .toString()
+                .trim();
+
+        Log.d(TAG, "FinalUserBranch" +  UserBranch);
+
+        UserBranchID = BranchSelectorsSpinner
+                .getSelectedItemId();
+        Log.d(TAG, "onCreate: " + UserBranchID);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         final ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,

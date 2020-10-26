@@ -55,9 +55,13 @@ public class AccountMainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
         GetInfoActivity getInfoActivity = new GetInfoActivity();
+        //making instance of firebase
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+        //assigning values to Text view displayname
         displaynamefield.setText(user.getDisplayName());
         displayemailfield.setText(user.getEmail());
         displaybranchfield.setText(getInfoActivity.UserBranch);

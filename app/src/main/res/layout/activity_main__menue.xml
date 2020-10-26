@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/PostBtn"
+            android:id="@+id/postMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
@@ -27,48 +27,51 @@
             android:background="@drawable/rounded_button"
             android:drawableLeft="@drawable/ic_ipost"
             android:paddingStart="40dp"
-            android:onClick="goToPost"
             android:text="post"
             android:textColor="@color/white"
             android:textSize="30sp" />
 
+<!--        android:onClick="goToPost"-->
+
         <Button
-            android:id="@+id/addPost"
+            android:id="@+id/addPostMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
-            android:onClick="goToAddPost"
+
             android:text="add post"
             android:textSize="30sp"
             android:textColor="@color/white"
             android:background="@drawable/rounded_button"
             android:drawableLeft="@drawable/ic_iadd_post"
             android:paddingStart="40dp"/>
+<!--        android:onClick="goToAddPost"-->
 
         <Button
+            android:id="@+id/eventMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
-            android:onClick="goToEvent"
-            android:text="event"
-            android:textSize="30sp"
-            android:textColor="@color/white"
             android:background="@drawable/rounded_button"
             android:drawableLeft="@drawable/ic_ievents"
-            android:paddingStart="40dp"/>
+
+            android:paddingStart="40dp"
+            android:text="event"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+<!--        android:onClick="goToEvent"-->
 
         <Button
-            android:id="@+id/account"
+            android:id="@+id/accountMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="32dp"
-            android:onClick="goToAccount"
             android:text="account"
             android:textSize="30sp"
             android:textColor="@color/white"
@@ -76,6 +79,7 @@
             android:drawableLeft="@drawable/ic_iaccount"
             android:paddingStart="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"/>
+        <!--            android:onClick="goToAccount"-->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

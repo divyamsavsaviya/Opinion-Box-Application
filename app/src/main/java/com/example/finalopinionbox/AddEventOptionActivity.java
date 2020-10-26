@@ -1,30 +1,15 @@
 package com.example.finalopinionbox;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class AddEventOptionActivity extends AppCompatActivity {
 
@@ -48,8 +33,6 @@ public class AddEventOptionActivity extends AppCompatActivity {
 
     public String y = x.dbName;
 
-
-
     DatabaseReference reff;
     Event event;
     Button btnpost;
@@ -66,37 +49,62 @@ public class AddEventOptionActivity extends AppCompatActivity {
         eventByEt = findViewById(R.id.texteventby);
 
         event = new Event();
+
         btnpost=(Button)findViewById(R.id.btnpostevent);
-        reff= FirebaseDatabase.getInstance().getReference().child("Event");
+
+        reff= FirebaseDatabase.
+                getInstance()
+                .getReference()
+                .child("Event");
+
+
+        event.setEventName(eventNameEt.getText().toString().trim());
+        event.setTopic(topicEt.getText().toString().trim());
+        event.setDate(dateEt.getText().toString().trim());
+        event.setVenue(venueEt.getText().toString().trim());
+        event.setEventBy(eventByEt.getText().toString().trim());
+        reff.push().setValue(event);
+        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
     }
 
-    private void creatUser() {
-
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put(event_name, eventNameEt.getText().toString().trim());
-        user.put(event_location, venueEt.getText().toString().trim());
-        user.put(event_org, eventByEt.getText().toString().trim());
-        user.put(event_topic,topicEt.getText().toString().trim());
+//    private void creatUser() {
+//
+//        // Create a new user with a first and last name
+//        Map<String, Object> user = new HashMap<>();
+//        user.put(event_name, eventNameEt
+//                .getText()
+//                .toString()
+//                .trim());
+//
+//        user.put(event_location, venueEt
+//                .getText()
+//                .toString()
+//                .trim());
+//
+//        user.put(event_org, eventByEt
+//                .getText()
+//                .toString()
+//                .trim());
+//        user.put(event_topic,topicEt.getText().toString().trim());
 
 // Add a new document with a generated ID
-        db.collection("/Users/" + y + "/Event/Event1")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(AddEventOptionActivity.this, Mai.class));
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                        Toast.makeText(getApplicationContext(),"Data Not successfully added",Toast.LENGTH_SHORT).show();
-                    }
-                });
+//        db.collection("/Users/" + y + "/Event/Event1")
+//                .add(user)
+//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+//                        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
+////                        startActivity(new Intent(AddEventOptionActivity.this, Mai.class));
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.w(TAG, "Error adding document", e);
+//                        Toast.makeText(getApplicationContext(),"Data Not successfully added",Toast.LENGTH_SHORT).show();
+//                    }
+//                });
 
         /* FOR GENERATING QUERY IN THIS BELOW QUERY IT
         CHECKS ALL FIELD NAME = "isAvailable" AND ITS
@@ -129,24 +137,24 @@ public class AddEventOptionActivity extends AppCompatActivity {
         INNSIDE COLLECTION = Event  */
 
 
-        final Task<DocumentSnapshot> documentSnapshotTask = db.collection("/Users/" + y + "/Event/Event1")
-                .document("Event1")
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Log.d(TAG, "onSuccess: " + documentSnapshot.getData());
-                        Log.d(TAG, "onSuccess: " + documentSnapshot.getString("name"));
-                        Log.d(TAG, "onSuccess: " + documentSnapshot.getDouble("price"));
-                        Log.d(TAG, "onSuccess: " + documentSnapshot.getBoolean("isAvailable"));
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.e(TAG, "onFailure: ", e);
-                    }
-                });
+//        final Task<DocumentSnapshot> documentSnapshotTask = db.collection("/Users/" + y + "/Event/Event1")
+//                .document("Event1")
+//                .get()
+//                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+//                    @Override
+//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+//                        Log.d(TAG, "onSuccess: " + documentSnapshot.getData());
+//                        Log.d(TAG, "onSuccess: " + documentSnapshot.getString("name"));
+//                        Log.d(TAG, "onSuccess: " + documentSnapshot.getDouble("price"));
+//                        Log.d(TAG, "onSuccess: " + documentSnapshot.getBoolean("isAvailable"));
+//                    }
+//                })
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Log.e(TAG, "onFailure: ", e);
+//                    }
+//                });
 
         /* GENERATING QUERY TO ARRANGE VALUE OF
          PRICE */
@@ -174,29 +182,27 @@ public class AddEventOptionActivity extends AppCompatActivity {
 //            }
 //        });
 
-        db.collection("/Users/Divyam/Event")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+//        db.collection("/Users/Divyam/Event")
+//                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+//                    @Override
+//                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+//                    }
+//                });
+//    }
 
-                    }
-                });
 
+//    public void postevent(View view) {
+////        creatUser();
+////        /* POOJAN WORK FOR TESING REALTIME DB*/
+//
+////        event.setEventName(eventNameEt.getText().toString().trim());
+////        event.setTopic(topicEt.getText().toString().trim());
+////        event.setDate(dateEt.getText().toString().trim());
+////        event.setVenue(venueEt.getText().toString().trim());
+////        event.setEventBy(eventByEt.getText().toString().trim());
+////        reff.push().setValue(event);
+////        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
+//
+//    }
 
-
-    }
-
-    public void postevent(View view) {
-        creatUser();
-        /* POOJAN WORK FOR TESING REALTIME DB*/
-
-//        event.setEventName(eventNameEt.getText().toString().trim());
-//        event.setTopic(topicEt.getText().toString().trim());
-//        event.setDate(dateEt.getText().toString().trim());
-//        event.setVenue(venueEt.getText().toString().trim());
-//        event.setEventBy(eventByEt.getText().toString().trim());
-//        reff.push().setValue(event);
-//        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
-
-    }
 }

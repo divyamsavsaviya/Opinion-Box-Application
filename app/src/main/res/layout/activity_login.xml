@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/PostBtn"
+            android:id="@+id/postMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
@@ -33,7 +33,7 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/addPost"
+            android:id="@+id/addPostMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
@@ -62,7 +62,7 @@
             android:paddingStart="40dp"/>
 
         <Button
-            android:id="@+id/account"
+            android:id="@+id/accountMainBtn"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="32dp"
