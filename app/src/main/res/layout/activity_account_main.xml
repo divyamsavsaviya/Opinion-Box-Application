@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="169dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_account_24" />
+            app:srcCompat="@drawable/ic_iaccount" />
 
         <TextView
             android:id="@+id/displayNameTv"

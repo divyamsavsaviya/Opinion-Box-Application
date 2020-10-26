@@ -40,7 +40,7 @@ public class model
         this.op2 = op2;
     }
 
-   /* public String getUsername() {
+   /* zpublic String getUsername() {
         return username;
     }
 

@@ -14,37 +14,37 @@ public class Event  {
         this.SeventName = eventName;
     }
 
-//    public String getTopic() {
-//        return Stopic;
-//    }
-//
-//    public void setTopic(String topic) {
-//        this.Stopic = topic;
-//    }
-//
-//    public String getDate() {
-//        return Sdate;
-//    }
-//
-//    public void setDate(String date) {
-//        this.Sdate = date;
-//    }
-//
-//    public String getVenue() {
-//        return Svenue;
-//    }
-//
-//    public void setVenue(String venue) {
-//        this.Svenue = venue;
-//    }
-//
-//    public String getEventBy() {
-//        return SeventBy;
-//    }
-//
-//    public void setEventBy(String eventBy) {
-//        this.SeventBy = eventBy;
-//    }
+   public String getTopic() {
+        return Stopic;
+    }
+
+    public void setTopic(String topic) {
+        this.Stopic = topic;
+    }
+
+    public String getDate() {
+        return Sdate;
+    }
+
+   public void setDate(String date) {
+        this.Sdate = date;
+    }
+
+    public String getVenue() {
+        return Svenue;
+    }
+
+    public void setVenue(String venue) {
+        this.Svenue = venue;
+    }
+
+    public String getEventBy() {
+       return SeventBy;
+    }
+
+    public void setEventBy(String eventBy) {
+       this.SeventBy = eventBy;
+    }
 
     public Event() {
     }

@@ -20,6 +20,7 @@ public class AccountMainActivity extends AppCompatActivity {
     private TextView displaynamefield;
     private TextView displayemailfield;
     private TextView displaybranchfield;
+    private TextView displayPhonefield;
 
     private Button logout_btn;
 //    private String providerId;
@@ -33,10 +34,21 @@ public class AccountMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account_main);
         logout_btn = (Button)  findViewById(R.id.logoutBTN);
 
+        GetInfoActivity getInfoActivity = new GetInfoActivity();
+
         displaynamefield = findViewById(R.id.displayNameTv);
         displayemailfield = findViewById(R.id.displayEmailTv);
         displaybranchfield = findViewById(R.id.displayBranchTv);
-        displaybranchfield = findViewById(R.id.displayBranchTv);
+        displayPhonefield = findViewById(R.id.displayContactTv);
+
+
+        displaynamefield.setText(getInfoActivity.UserName);
+        displayemailfield.setText("user@gmail.com");
+        displaybranchfield.setText(getInfoActivity.UserBranch);
+        displayPhonefield.setText(getInfoActivity.UserPhone);
+
+
+
 
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,21 +67,6 @@ public class AccountMainActivity extends AppCompatActivity {
                 }
             }
         });
-        GetInfoActivity getInfoActivity = new GetInfoActivity();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        displaynamefield.setText(user.getDisplayName());
-        displayemailfield.setText(user.getEmail());
-        displaybranchfield.setText(getInfoActivity.selectedBranch);
-
-
-
-
-
-
-
-
-
 
     }
 

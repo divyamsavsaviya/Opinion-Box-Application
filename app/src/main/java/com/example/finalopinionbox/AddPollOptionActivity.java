@@ -51,6 +51,7 @@ public class AddPollOptionActivity extends AppCompatActivity {
         btnAddRow =  findViewById(R.id.btnaddrow);
         petition=new Petition();
         btnnxt=(Button)findViewById(R.id.btnnext);
+        btnnxt.setEnabled(false);
         reff= FirebaseDatabase.getInstance().getReference().child("Petition");
 
 
@@ -61,8 +62,10 @@ public class AddPollOptionActivity extends AppCompatActivity {
                 petition.setPostText(postText.getText().toString().trim());
                 petition.setOp1(op1.getText().toString().trim());
                 petition.setOp2(op2.getText().toString().trim());
+                /*For future references...
                 petition.setOp3(op3.getText().toString().trim());
                 petition.setOp4(op4.getText().toString().trim());
+                */
                 reff.push().setValue(petition);
                 Toast.makeText(getApplicationContext(), " Data added succesfully ", LENGTH_SHORT).show();
 
@@ -74,6 +77,7 @@ public class AddPollOptionActivity extends AppCompatActivity {
 
         });
 
+        // To Choose of anonimity of the user.
         Spinner spinner;
         spinner = (Spinner) findViewById(R.id.spinner3);
 
@@ -103,7 +107,6 @@ public class AddPollOptionActivity extends AppCompatActivity {
                 op4.setVisibility(View.VISIBLE);
             }
         });
-
     }
 
     //Adding functionality for the view of the opition
@@ -137,7 +140,9 @@ public class AddPollOptionActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if (charSequence.toString().equals(" ")) {
                     op3.setEnabled(false);//if option 2 is empty then option 3 is uneditable.
+                    btnnxt.setEnabled(false); //if option 2 is empty then next button will not be enabled
                 } else {
+                    btnnxt.setEnabled(true);
                     op3.setEnabled(true);//if option 2 is not empty then option 3 is editable.
                     Log.d(TAG, "onTextChanged: option 3 is editable.");
                 }

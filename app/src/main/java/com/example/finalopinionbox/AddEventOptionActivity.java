@@ -1,5 +1,6 @@
 package com.example.finalopinionbox;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AddEventOptionActivity extends AppCompatActivity {
+public class AddEventOptionActivity<Static> extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -38,16 +39,16 @@ public class AddEventOptionActivity extends AppCompatActivity {
     private EditText venueEt;
     private EditText eventByEt;
 
-    private final  String event_topic = "event_topic";
-    private final  String event_date = "event_date";
-    private final  String event_location = "event_location";
-    private final  String event_name = "event_name";
-    private final  String event_org = "event_org";
+    private final String event_topic = "event_topic";
+    private final String event_date = "event_date";
+    private final String event_location = "event_location";
+    private final String event_name = "event_name";
+    private final String event_org = "event_org";
 
     LoginActivity x = new LoginActivity();
 
-    public String y = x.dbName;
-
+    //    public String y = x.dbName;
+    static int i = 1;
 
 
     DatabaseReference reff;
@@ -66,28 +67,49 @@ public class AddEventOptionActivity extends AppCompatActivity {
         eventByEt = findViewById(R.id.texteventby);
 
         event = new Event();
-        btnpost=(Button)findViewById(R.id.btnpostevent);
-        reff= FirebaseDatabase.getInstance().getReference().child("Event");
+        btnpost = (Button) findViewById(R.id.btnpostevent);
+        reff = FirebaseDatabase.getInstance().getReference().child("Event");
+        btnpost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i++;
+                event.setEventName(eventNameEt.getText().toString().trim());
+                event.setTopic(topicEt.getText().toString().trim());
+                event.setDate(dateEt.getText().toString().trim());
+                event.setVenue(venueEt.getText().toString().trim());
+                event.setEventBy(eventByEt.getText().toString().trim());
+                reff.child("event" + i).setValue(event);
+                Toast.makeText(getApplicationContext(), "Data added successfully", Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(AddEventOptionActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void creatUser() {
 
         // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put(event_name, eventNameEt.getText().toString().trim());
-        user.put(event_location, venueEt.getText().toString().trim());
-        user.put(event_org, eventByEt.getText().toString().trim());
-        user.put(event_topic,topicEt.getText().toString().trim());
-
+        Map<String, Object> event = new HashMap<>();
+        event.put(event_name, eventNameEt.getText().toString().trim());
+        event.put(event_location, venueEt.getText().toString().trim());
+        event.put(event_org, eventByEt.getText().toString().trim());
+        event.put(event_topic, topicEt.getText().toString().trim());
+        event.put(event_date, dateEt.getText().toString().trim());
+/*
 // Add a new document with a generated ID
         db.collection("/Users/" + y + "/Event/Event1")
-                .add(user)
+                .add(event)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
                         Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(AddEventOptionActivity.this, Mai.class));
+                        Intent intent = new Intent(AddEventOptionActivity.this,AccountMainActivity.class);
+                        startActivity(intent);
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -97,7 +119,7 @@ public class AddEventOptionActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Data Not successfully added",Toast.LENGTH_SHORT).show();
                     }
                 });
-
+*/
         /* FOR GENERATING QUERY IN THIS BELOW QUERY IT
         CHECKS ALL FIELD NAME = "isAvailable" AND ITS
         VALUE TRUE IN EVERY DOCUMENT INSIDE
@@ -121,7 +143,7 @@ public class AddEventOptionActivity extends AppCompatActivity {
 //                        Log.e(TAG, "onFailure: ", e );;
 //
 //                    }
-//                });
+//                });*/
 
 
         /* FOR ACCESING INDIVIDUAL DOCUMENT =Event1
@@ -129,7 +151,7 @@ public class AddEventOptionActivity extends AppCompatActivity {
         INNSIDE COLLECTION = Event  */
 
 
-        final Task<DocumentSnapshot> documentSnapshotTask = db.collection("/Users/" + y + "/Event/Event1")
+       /* final Task<DocumentSnapshot> documentSnapshotTask = db.collection("/Users/" + y + "/Event/Event1")
                 .document("Event1")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -146,7 +168,7 @@ public class AddEventOptionActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         Log.e(TAG, "onFailure: ", e);
                     }
-                });
+                });*/
 
         /* GENERATING QUERY TO ARRANGE VALUE OF
          PRICE */
@@ -173,7 +195,7 @@ public class AddEventOptionActivity extends AppCompatActivity {
 //                Log.e(TAG, "onFailure: ", e );
 //            }
 //        });
-
+/*
         db.collection("/Users/Divyam/Event")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -184,19 +206,20 @@ public class AddEventOptionActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
 
-    public void postevent(View view) {
+   /* public void postevent(View view) {
         creatUser();
-        /* POOJAN WORK FOR TESING REALTIME DB*/
+     //    POOJAN WORK FOR TESING REALTIME DB
 
-//        event.setEventName(eventNameEt.getText().toString().trim());
-//        event.setTopic(topicEt.getText().toString().trim());
-//        event.setDate(dateEt.getText().toString().trim());
-//        event.setVenue(venueEt.getText().toString().trim());
-//        event.setEventBy(eventByEt.getText().toString().trim());
-//        reff.push().setValue(event);
-//        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
+       event.setEventName(eventNameEt.getText().toString().trim());
+        event.setTopic(topicEt.getText().toString().trim());
+        event.setDate(dateEt.getText().toString().trim());
+        event.setVenue(venueEt.getText().toString().trim());
+        event.setEventBy(eventByEt.getText().toString().trim());
+        reff.push().setValue(event);
+        Toast.makeText(getApplicationContext(),"Data added successfully",Toast.LENGTH_SHORT).show();
 
+    }*/
     }
 }
