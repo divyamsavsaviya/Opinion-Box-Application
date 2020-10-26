@@ -27,8 +27,7 @@ public class myAdapter extends FirebaseRecyclerAdapter<model,myAdapter.viewHolde
 
     @NonNull
     @Override
-    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-    {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_post, parent, false);
         return new viewHolder(view);
     }
@@ -38,14 +37,12 @@ public class myAdapter extends FirebaseRecyclerAdapter<model,myAdapter.viewHolde
 
         TextView op1, op2, postText;
         //TextView username;
-        public viewHolder(@NonNull View itemView)
-        {
+        public viewHolder(@NonNull View itemView) {
             super(itemView);
             postText =  itemView.findViewById(R.id.poll_question);
             op1 =  itemView.findViewById(R.id.poll_option1);
             op2 =  itemView.findViewById(R.id.poll_option2);
             //username = (TextView) itemView.findViewById(R.id.userName);
-
         }
     }
 

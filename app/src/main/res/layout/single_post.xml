@@ -1,81 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#1d2541"
-    tools:context=".Main_Menue_Activity">
+    android:layout_height="225dp"
+    android:background="#000000">
 
-    <LinearLayout
-        android:layout_width="379dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/poll1"
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        android:layout_margin="0dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="0dp">
 
-        <Button
-            android:id="@+id/PostBtn"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="32dp"
-            android:background="@drawable/rounded_button"
-            android:drawableLeft="@drawable/ic_ipost"
-            android:paddingStart="40dp"
-            android:onClick="goToPost"
-            android:text="post"
-            android:textColor="@color/white"
-            android:textSize="30sp" />
+            android:layout_height="40dp"
+            android:background="#1d2541"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/addPost"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="goToAddPost"
-            android:text="add post"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_button"
-            android:drawableLeft="@drawable/ic_iadd_post"
-            android:paddingStart="40dp"/>
+            <ImageView
+                android:id="@+id/userImage"
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.13"
+                android:padding="7dp"
+                app:srcCompat="@drawable/user"
+                tools:srcCompat="@drawable/user" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="goToEvent"
-            android:text="event"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_button"
-            android:drawableLeft="@drawable/ic_ievents"
-            android:paddingStart="40dp"/>
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="13dp"
+                android:layout_weight="1"
+                android:text="Rahul Sharma"
+                android:textColor="#d8dffd"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/account"
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="goToAccount"
-            android:text="account"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:background="@drawable/rounded_button"
-            android:drawableLeft="@drawable/ic_iaccount"
-            android:paddingStart="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="176dp"
+            android:layout_marginTop="40dp"
+            android:background="#1d2541"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/gradient_border" />
+
+
+            <TextView
+                android:id="@+id/poll_question"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="What should be the criteria for being a member of the student council?"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seek_bar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="24"
+                android:progressDrawable="@drawable/progress_track"
+                android:thumb="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="@id/poll_question"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/poll_option1"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="-40dp"
+                android:gravity="center_vertical"
+                android:paddingStart="32dp"
+                android:paddingLeft="32dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:text="Student Voting"
+                android:textColor="#d8dffd"
+                app:layout_constraintEnd_toStartOf="@id/poll_question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/poll_percent1"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="-40dp"
+                android:gravity="center|end|center_vertical"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingEnd="32dp"
+                android:paddingRight="32dp"
+                android:text=" "
+                android:textColor="#d8dffd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/poll_question" />
+
+            <SeekBar
+                android:id="@+id/seek_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="25"
+                android:progressDrawable="@drawable/progress_track"
+                android:thumb="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seek_bar1" />
+
+            <TextView
+                android:id="@+id/poll_option2"
+                android:layout_width="165dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="-40dp"
+                android:gravity="center_vertical"
+                android:paddingStart="32dp"
+                android:paddingLeft="32dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:text="Staff Voting"
+                android:textColor="#d8dffd"
+                app:layout_constraintEnd_toStartOf="@id/poll_percent2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seek_bar1" />
+
+            <TextView
+                android:id="@+id/poll_percent2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="-40dp"
+                android:gravity="right|center_vertical"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingEnd="32dp"
+                android:paddingRight="32dp"
+                android:text=" "
+                android:textColor="#d8dffd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seek_bar1" />
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
+
+
+
+
+
