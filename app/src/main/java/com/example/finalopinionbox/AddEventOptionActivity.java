@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class AddEventOptionActivity<Static> extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+//    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private static final String TAG = "activity_add_event_option";
 
@@ -70,6 +70,7 @@ public class AddEventOptionActivity<Static> extends AppCompatActivity {
         btnpost = (Button) findViewById(R.id.btnpostevent);
         reff = FirebaseDatabase.getInstance().getReference().child("Event");
         btnpost.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 i++;
@@ -80,7 +81,6 @@ public class AddEventOptionActivity<Static> extends AppCompatActivity {
                 event.setEventBy(eventByEt.getText().toString().trim());
                 reff.child("event" + i).setValue(event);
                 Toast.makeText(getApplicationContext(), "Data added successfully", Toast.LENGTH_SHORT).show();
-
 
                 Intent intent = new Intent(AddEventOptionActivity.this, MainActivity.class);
                 startActivity(intent);

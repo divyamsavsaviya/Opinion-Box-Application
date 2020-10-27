@@ -13,6 +13,8 @@ import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +23,10 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity {
 
     public String dbName;
+    public DatabaseReference mDatabase;
+    public FirebaseUser user;
+    public String username;
+
 
     private static final String TAG = "LoginRegisterActivity";
     int AUTHUI_REQUEST_CODE  = 2910 ;
@@ -29,6 +35,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // To read or write data from the database, we need an instance of DatabaseReference
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        username = usernameFromEmail(user.getEmail());
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null ){
             Toast.makeText(this , " Hi, Welcome Back Again :) " , Toast.LENGTH_LONG).show();
@@ -69,11 +81,17 @@ public class LoginActivity extends AppCompatActivity {
         if(requestCode == AUTHUI_REQUEST_CODE ){
             if ( resultCode == RESULT_OK ){
                 // for login user or new use
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
                 // new user
 
                 if (Objects.requireNonNull(user.getMetadata()).getCreationTimestamp()  == user.getMetadata().getLastSignInTimestamp()){
                     Toast.makeText(this , " Welcome new user " ,Toast.LENGTH_LONG).show();
+
+
+                    // calling writeNewUser function
+                    writeNewUser(user.getUid() , username , user.getEmail());
+
+                    ///redirecting to getInfoActivity
                     startActivity(new Intent( this , GetInfoActivity.class));
                     finish();
                 } else {
@@ -100,6 +118,30 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e(TAG, "onActivityResult: ",  response.getError());
                 }
             }
+        }
+    }
+
+    //using this function we are making node inside users
+    // and inside it we are making child userId and its value will be user
+    private void writeNewUser(String userId, String name, String email) {
+        User user = new User(name, email);
+
+        mDatabase.child("users")
+                .child(userId)
+                .child("Name").setValue(name);
+
+        mDatabase.child("users")
+                .child(userId)
+                .child("Email").setValue(email);
+
+
+    }
+
+    private String usernameFromEmail(String email) {
+        if (email.contains("@")) {
+            return email.split("@")[0];
+        } else {
+            return email;
         }
     }
 

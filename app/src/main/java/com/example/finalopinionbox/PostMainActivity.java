@@ -30,7 +30,7 @@ public class PostMainActivity extends AppCompatActivity {
     double count1 = 1, count2 = 1;
     boolean flag1 = true, flag2 = true;
 
-    DatabaseReference ref1=FirebaseDatabase.getInstance().getReference();
+    DatabaseReference ref1= FirebaseDatabase.getInstance().getReference();
     DatabaseReference ref2;
 
     @Override
@@ -52,15 +52,13 @@ public class PostMainActivity extends AppCompatActivity {
         seekbar1 = findViewById(R.id.seek_bar1);
         seekbar2 = findViewById(R.id.seek_bar2);
 
-
         op1 = findViewById(R.id.poll_option1);
         op2 = findViewById(R.id.poll_option2);
-
 
         tvpercent1 = findViewById(R.id.poll_percent1);
         tvpercent2 = findViewById(R.id.poll_percent2);
 
-        ref2=ref1.child("Petition");
+        ref2 = ref1.child("Petition");
 
         ref2.addValueEventListener(new ValueEventListener() {
             @SuppressLint("ClickableViewAccessibility")
